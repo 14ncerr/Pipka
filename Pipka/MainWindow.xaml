@@ -1,0 +1,58 @@
+﻿<Window x:Class="Pipka.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pipka"
+        xmlns:vm="clr-namespace:Pipka.ViewModels"
+        mc:Ignorable="d"
+        Title="MainWindow" 
+        Height="450" 
+        Width="800"
+        Background="Transparent">
+
+    <Window.DataContext>
+        <vm:StarterViewModel/>
+    </Window.DataContext>
+    
+    <Border Background="Gray"
+            CornerRadius="20">
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.15*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="160"/>
+                    <ColumnDefinition Width="160"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+             
+                <Button 
+                    Margin="8"
+                    Content="Выбрать группу"
+                    BorderThickness="0"/>
+
+                <Button 
+                    Grid.Column="1"
+                    Margin="8"
+                    Content="Add New"
+                    BorderThickness="0"
+                    Command="{Binding AddNewEntityWindowCommand}"/>
+            </Grid>
+            
+
+            <ContentControl Grid.Row="1"
+                            Content="{Binding CurrentView}">
+                
+            </ContentControl>
+            
+        </Grid>
+        
+    </Border>
+</Window>
