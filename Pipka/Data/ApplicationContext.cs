@@ -24,7 +24,7 @@ namespace Pipka.Data
             .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<Schedule>()
-            .HasOne<Discipline>(s => s.Discipline)
+            .HasOne<TeacherAndDiscipline>(s => s.TeacherAndDiscipline)
             .WithMany(d => d.Schedules)
             .OnDelete(DeleteBehavior.Cascade);
 
@@ -33,21 +33,21 @@ namespace Pipka.Data
            .WithMany(g => g.Schedules)
            .OnDelete(DeleteBehavior.Cascade);
 
-            modelBuilder.Entity<Schedule>()
-           .HasOne<Teacher>(s => s.Teacher)
-           .WithMany(t => t.Schedules)
-           .OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<TeacherAndDiscipline>()
+                .HasOne<Teacher>(t => t.Teacher)
+                .WithMany(td => td.TeacherAndDisciplines)
+                .OnDelete(DeleteBehavior.Cascade);
 
-        //    modelBuilder.Entity<Discipline>()
-          // .HasOne<Teacher>(d => d.Teacher)
-         //  .WithMany(t => t.Disciplines)
-           //.OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<TeacherAndDiscipline>()
+               .HasOne<Discipline>(t => t.Discipline)
+               .WithMany(td => td.TeacherAndDisciplines)
+               .OnDelete(DeleteBehavior.Cascade);
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //string connectionString = @"Server=PC-232-13\SQLEXPRESS;Database=PKursovaDB;User Id=U-19; Password=19$RPEe;";
-            string connectionString = @"Server=DESKTOP-IL38R2G\SQLEXPRESS;Database=PKursovaDB;Trusted_Connection=True;";
+            string connectionString = @"Server=PC-232-13\SQLEXPRESS;Database=PKursovaDB;User Id=U-19; Password=19$RPEe;";
+            //string connectionString = @"Server=DESKTOP-IL38R2G\SQLEXPRESS;Database=PKursovaDB;Trusted_Connection=True;";
             optionsBuilder.UseSqlServer(connectionString);
         }
     }

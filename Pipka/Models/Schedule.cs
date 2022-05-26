@@ -11,11 +11,8 @@ namespace Pipka.Models
         public int Id { get; set; }
         public DateTime Date { get; set; }
 
-        public virtual Discipline Discipline { get; set; }
-        public int DisciplineId { get; set; }
-
-        public virtual Teacher Teacher { get; set; }
-        public int TeacherId { get; set; }
+        public virtual TeacherAndDiscipline TeacherAndDiscipline { get; set; }
+        public int TeacherAndDisciplineId { get; set; }
 
         public virtual Group Group { get; set; }
         public int GroupId { get; set; }

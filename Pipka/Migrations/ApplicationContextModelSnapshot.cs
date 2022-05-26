@@ -89,24 +89,19 @@ namespace Pipka.Migrations
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("DisciplineId")
-                        .HasColumnType("int");
-
                     b.Property<int>("GroupId")
                         .HasColumnType("int");
 
-                    b.Property<int>("TeacherId")
+                    b.Property<int>("TeacherAndDisciplineId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.HasIndex("ClassTimeId");
 
-                    b.HasIndex("DisciplineId");
-
                     b.HasIndex("GroupId");
 
-                    b.HasIndex("TeacherId");
+                    b.HasIndex("TeacherAndDisciplineId");
 
                     b.ToTable("Schedules");
                 });
@@ -119,13 +114,44 @@ namespace Pipka.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<string>("FullName")
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MiddleName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
                     b.ToTable("Teachers");
+                });
+
+            modelBuilder.Entity("Pipka.Models.TeacherAndDiscipline", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("DisciplineId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TeacherId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DisciplineId");
+
+                    b.HasIndex("TeacherId");
+
+                    b.ToTable("TeacherAndDiscipline");
                 });
 
             modelBuilder.Entity("Pipka.Models.Schedule", b =>
@@ -136,29 +162,40 @@ namespace Pipka.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Pipka.Models.Discipline", "Discipline")
-                        .WithMany("Schedules")
-                        .HasForeignKey("DisciplineId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("Pipka.Models.Group", "Group")
                         .WithMany("Schedules")
                         .HasForeignKey("GroupId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Pipka.Models.Teacher", "Teacher")
+                    b.HasOne("Pipka.Models.TeacherAndDiscipline", "TeacherAndDiscipline")
                         .WithMany("Schedules")
-                        .HasForeignKey("TeacherId")
+                        .HasForeignKey("TeacherAndDisciplineId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("ClassTime");
 
-                    b.Navigation("Discipline");
-
                     b.Navigation("Group");
+
+                    b.Navigation("TeacherAndDiscipline");
+                });
+
+            modelBuilder.Entity("Pipka.Models.TeacherAndDiscipline", b =>
+                {
+                    b.HasOne("Pipka.Models.Discipline", "Discipline")
+                        .WithMany("TeacherAndDisciplines")
+                        .HasForeignKey("DisciplineId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Pipka.Models.Teacher", "Teacher")
+                        .WithMany("TeacherAndDisciplines")
+                        .HasForeignKey("TeacherId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Discipline");
 
                     b.Navigation("Teacher");
                 });
@@ -170,7 +207,7 @@ namespace Pipka.Migrations
 
             modelBuilder.Entity("Pipka.Models.Discipline", b =>
                 {
-                    b.Navigation("Schedules");
+                    b.Navigation("TeacherAndDisciplines");
                 });
 
             modelBuilder.Entity("Pipka.Models.Group", b =>
@@ -179,6 +216,11 @@ namespace Pipka.Migrations
                 });
 
             modelBuilder.Entity("Pipka.Models.Teacher", b =>
+                {
+                    b.Navigation("TeacherAndDisciplines");
+                });
+
+            modelBuilder.Entity("Pipka.Models.TeacherAndDiscipline", b =>
                 {
                     b.Navigation("Schedules");
                 });

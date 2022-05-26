@@ -9,8 +9,9 @@ namespace Pipka.Models
     public class Discipline
     {
         public int Id { get; set; }
+
         public string Name { get; set; }
 
-        public List<Schedule> Schedules { get; set; }
+        public List<TeacherAndDiscipline> TeacherAndDisciplines { get; set; }
     }
 }

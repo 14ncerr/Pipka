@@ -10,16 +10,17 @@ namespace Pipka.ViewModels
 {
     public class StarterViewModel : ViewModel
     {
-        public AddNewEntityWindow _addNewEntityWindow = new AddNewEntityWindow();
+        public EntitySelectActionWindow _entitySelectActionWindow;
 
-        private RelayCommand _addNewEntityWindowCommand;
-        public RelayCommand AddNewEntityWindowCommand
+        private RelayCommand _entitySelectActionWindowCommand;
+        public RelayCommand EntitySelectActionWindowCommand
         {
             get
             {
-                return _addNewEntityWindowCommand ?? new RelayCommand(obj =>
+                return _entitySelectActionWindowCommand ?? new RelayCommand(obj =>
                 {
-                    _addNewEntityWindow.ShowDialog();
+                    _entitySelectActionWindow = new EntitySelectActionWindow();
+                    _entitySelectActionWindow.ShowDialog();
                 });
             }
         }

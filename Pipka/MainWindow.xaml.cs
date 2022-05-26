@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Pipka.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,12 @@ namespace Pipka
         public MainWindow()
         {
             InitializeComponent();
+            using (ApplicationContext db = new ApplicationContext())
+            {
+                DataManage.AllGroups = db.Groups.ToList();
+                DataManage.AllTeachers = db.Teachers.ToList();
+            }
+                
         }
     }
 }

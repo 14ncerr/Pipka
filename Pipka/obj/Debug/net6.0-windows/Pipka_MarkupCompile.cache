@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\CL\ST4\git771\Pipka\Pipka\Pipka\obj\Debug\net6.0-windows\
+D:\19\common\KursovKuhar\Pipka\Pipka\Pipka\obj\Debug\net6.0-windows\
 Pipka
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-D:\CL\ST4\git771\Pipka\Pipka\Pipka\App.xaml
-5-64780159
+D:\19\common\KursovKuhar\Pipka\Pipka\Pipka\App.xaml
+81946252169
 
-201002296462
-214-396799004
-MainWindow.xaml;Resources\Styles.xaml;Views\GroupActionView.xaml;Views\TeacherActionView.xaml;Views\Windows\AddNewEntityWindow.xaml;
+34-1820263810
+2142098023572
+MainWindow.xaml;Resources\Styles.xaml;Views\ClassTimeActionView.xaml;Views\DisciplineActionView.xaml;Views\GroupActionView.xaml;Views\ScheduleActionView.xaml;Views\TeacherActionView.xaml;Views\Windows\EntitySelectActionWindow.xaml;
 
 False
 

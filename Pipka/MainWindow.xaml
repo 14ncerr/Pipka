@@ -43,7 +43,7 @@
                     Margin="8"
                     Content="Add New"
                     BorderThickness="0"
-                    Command="{Binding AddNewEntityWindowCommand}"/>
+                    Command="{Binding EntitySelectActionWindowCommand}"/>
             </Grid>
             
 

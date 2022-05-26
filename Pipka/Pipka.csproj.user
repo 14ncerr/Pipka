@@ -7,13 +7,22 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Views\ClassTimeActionView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\DisciplineActionView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\GroupActionView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\ScheduleActionView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\TeacherActionView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\Windows\AddNewEntityWindow.xaml.cs">
+    <Compile Update="Views\Windows\EntitySelectActionWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -24,13 +33,22 @@
     <Page Update="Resources\Styles.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Views\ClassTimeActionView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\DisciplineActionView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\GroupActionView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ScheduleActionView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\TeacherActionView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\Windows\AddNewEntityWindow.xaml">
+    <Page Update="Views\Windows\EntitySelectActionWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

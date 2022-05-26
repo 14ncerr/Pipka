@@ -4,8 +4,15 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Pipka.Views"
+             xmlns:vm="clr-namespace:Pipka.ViewModels"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="600" 
+             d:DesignWidth="800">
+    
+    <UserControl.DataContext>
+        <vm:TeacherActionViewModel/>
+    </UserControl.DataContext>
+
     <Grid>
 
         <Grid.ColumnDefinitions>
@@ -30,7 +37,8 @@
 
             <TextBox
                 Margin="8"
-                Height="24"/>
+                Height="24"
+                Text="{Binding NLastName}"/>
 
             <TextBlock 
                 Text="Имя"
@@ -41,7 +49,8 @@
 
             <TextBox
                 Margin="8"
-                Height="24"/>
+                Height="24"
+                Text="{Binding NFirstName}"/>
 
             <TextBlock 
                 Text="Отчество"
@@ -52,12 +61,15 @@
 
             <TextBox
                 Margin="8"
-                Height="24"/>
+                Height="24"
+                Text="{Binding NMiddleName}"/>
 
             <Button
                 Margin="8"
                 Height="34"
-                Content="Добавить"/>
+                Content="Добавить"
+                Command="{Binding AddNewTeacherCommand}"
+                CommandParameter="{Binding ElementName=DeleteAllTeachersCmb}"/>
             
             
         </StackPanel>
@@ -70,15 +82,33 @@
                        Margin="8"/>
 
             <TextBlock 
+                Text="ФИО"
+                Foreground="White"
+                FontSize="18"
+                HorizontalAlignment="Center"
+                Margin="8 48 8 8"/>
+
+            <ComboBox
+                Name="FIOChangeAllTeachersCmb"
+                Margin="8"
+                Height="24"
+                ItemsSource="{Binding AllTeachers}"
+                DisplayMemberPath="FullName"
+                SelectedItem="{Binding SelectedTeacher}"
+                SelectionChanged="FIOChangeAllTeachersCmb_SelectionChanged"
+                />
+
+            <TextBlock 
                 Text="Фамилия"
                 Foreground="White"
                 FontSize="18"
                 HorizontalAlignment="Left"
-                Margin="8 48 8 8"/>
+                Margin="8"/>
 
             <TextBox
                 Margin="8"
-                Height="24"/>
+                Height="24"
+                Text="{Binding NLastName}"/>
 
             <TextBlock 
                 Text="Имя"
@@ -89,7 +119,8 @@
 
             <TextBox
                 Margin="8"
-                Height="24"/>
+                Height="24"
+                Text="{Binding NFirstName}"/>
 
             <TextBlock 
                 Text="Отчество"
@@ -100,12 +131,15 @@
 
             <TextBox
                 Margin="8"
-                Height="24"/>
+                Height="24"
+                Text="{Binding NMiddleName}"/>
 
             <Button
                 Margin="8"
                 Height="34"
-                Content="Изменить"/>
+                Content="Изменить"
+                Command="{Binding EditTeacherCommand}"
+                CommandParameter="{Binding ElementName=DeleteAllTeachersCmb}"/>
         </StackPanel>
 
         <StackPanel Grid.Column="2">
@@ -123,13 +157,19 @@
                 Margin="8 48 8 8"/>
 
             <ComboBox
+                Name="DeleteAllTeachersCmb"
                 Margin="8"
-                Height="24"/>
+                Height="24"
+                ItemsSource="{Binding AllTeachers}"
+                DisplayMemberPath="FullName"
+                SelectedItem="{Binding SelectedTeacher}"/>
 
             <Button
                 Margin="8"
                 Height="34"
-                Content="Удалить"/>
+                Content="Удалить"
+                Command="{Binding DeleteTeacherCommand}"
+                CommandParameter="{Binding ElementName=DeleteAllTeachersCmb}"/>
         </StackPanel>
 
     </Grid>
