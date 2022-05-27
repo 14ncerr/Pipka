@@ -13,6 +13,12 @@
     <Compile Update="Views\DisciplineActionView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\DisciplineActionViews\AddNewDisciplineView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\DisciplineActionViews\DeleteDisciplineView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\GroupActionView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -52,6 +58,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\DisciplineActionView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\DisciplineActionViews\AddNewDisciplineView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\DisciplineActionViews\DeleteDisciplineView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\GroupActionView.xaml">

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace Pipka.ViewModels.TeacherActionViewModels
 {
@@ -58,12 +59,14 @@ namespace Pipka.ViewModels.TeacherActionViewModels
 
                             MessageBox.Show($"Успешно! Данные о работнике {SelectedTeacher.LastName} {SelectedTeacher.FirstName} {SelectedTeacher.MiddleName}обновлены.");
                             SetNullValuesToProperties();
+                            (obj as ComboBox).SelectedItem = null;
 
                         }
                         catch (Exception ex)
                         {
                             MessageBox.Show(ex.ToString() + " Ошибка, что-то пошло не так.");
                             SetNullValuesToProperties();
+                            (obj as ComboBox).SelectedItem = null;
                         }
                     }
                 });

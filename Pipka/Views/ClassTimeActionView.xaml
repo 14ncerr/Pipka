@@ -7,266 +7,76 @@
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="800">
     <Grid>
-
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.12*"/>
+            <RowDefinition Height="60"/>
             <RowDefinition/>
-            <RowDefinition Height="0.12*"/>
         </Grid.RowDefinitions>
 
-        <Button 
-            Grid.Row="2"
-            Content="Сохранить"
-            Height="40"
-            Width="300"
-            Margin="8"/>
-        
-        <TextBlock 
-            Grid.Row="0"
-            Text="График"
-            Foreground="White"
-            FontSize="34"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center"/>
-
-        <Grid Grid.Row="1">
-            
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-
+        <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <StackPanel Grid.Row="0"
-                        Grid.Column="0">
-                
-                <TextBlock 
-                    Text="Первая пара"
-                    Foreground="White"
-                    FontSize="24"
-                    Margin="8 24 8 8"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center"/>
-
-                <TextBlock 
-                    Text="Время начала пары"
-                    Foreground="White"
+            <RadioButton
+                    Grid.Column="0"
+                    Content="1 пара"
                     FontSize="18"
-                    Margin="8"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center"/>
+                    Command="{}"
+                    Style="{StaticResource MenuButtonTheme}"/>
 
-                <TextBox 
-                    Margin="8"
-                    Height="24"/>
-
-                <TextBlock 
-                    Text="Время окончания пары"
-                    Foreground="White"
+            <RadioButton
+                    Grid.Column="1"
+                    Content="2 пара"
                     FontSize="18"
-                    Margin="8"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center"/>
+                    Command="{}"
+                    Style="{StaticResource MenuButtonTheme}"/>
 
-                <TextBox 
-                    Margin="8"
-                    Height="24"/>
-
-            </StackPanel>
-
-            <StackPanel Grid.Row="0"
-                        Grid.Column="1">
-
-                <TextBlock 
-                    Text="Вторая пара"
-                    Foreground="White"
-                    FontSize="24"
-                    Margin="8 24 8 8"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center"/>
-
-                <TextBlock 
-                    Text="Время начала пары"
-                    Foreground="White"
+            <RadioButton
+                    Grid.Column="2"
+                    Content="3 пара"
                     FontSize="18"
-                    Margin="8"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center"/>
+                    Command="{}"
+                    Style="{StaticResource MenuButtonTheme}"/>
 
-                <TextBox 
-                    Margin="8"
-                    Height="24"/>
-
-                <TextBlock 
-                    Text="Время окончания пары"
-                    Foreground="White"
+            <RadioButton
+                    Grid.Column="3"
+                    Content="4 пара"
                     FontSize="18"
-                    Margin="8"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center"/>
+                    Command="{}"
+                    Style="{StaticResource MenuButtonTheme}"/>
 
-                <TextBox 
-                    Margin="8"
-                    Height="24"/>
-            </StackPanel>
-
-            <StackPanel Grid.Row="0"
-                        Grid.Column="2">
-
-                <TextBlock 
-                    Text="Третья пара"
-                    Foreground="White"
-                    FontSize="24"
-                    Margin="8 24 8 8"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center"/>
-
-                <TextBlock 
-                    Text="Время начала пары"
-                    Foreground="White"
+            <RadioButton
+                    Grid.Column="4"
+                    Content="5 пара"
                     FontSize="18"
-                    Margin="8"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center"/>
+                    Command="{}"
+                    Style="{StaticResource MenuButtonTheme}"/>
 
-                <TextBox 
-                    Margin="8"
-                    Height="24"/>
-
-                <TextBlock 
-                    Text="Время окончания пары"
-                    Foreground="White"
+            <RadioButton
+                    Grid.Column="5"
+                    Content="6 пара"
                     FontSize="18"
-                    Margin="8"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center"/>
+                    Command="{}"
+                    Style="{StaticResource MenuButtonTheme}"/>
 
-                <TextBox 
-                    Margin="8"
-                    Height="24"/>
-            </StackPanel>
-
-            <StackPanel Grid.Row="1"
-                        Grid.Column="0">
-
-                <TextBlock 
-                    Text="Четвёртая пара"
-                    Foreground="White"
-                    FontSize="24"
-                    Margin="8"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center"/>
-
-                <TextBlock 
-                    Text="Время начала пары"
-                    Foreground="White"
+            <RadioButton
+                    Grid.Column="6"
+                    Content="7 пара"
                     FontSize="18"
-                    Margin="8"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center"/>
-
-                <TextBox 
-                    Margin="8"
-                    Height="24"/>
-
-                <TextBlock 
-                    Text="Время окончания пары"
-                    Foreground="White"
-                    FontSize="18"
-                    Margin="8"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center"/>
-
-                <TextBox 
-                    Margin="8"
-                    Height="24"/>
-            </StackPanel>
-
-            <StackPanel Grid.Row="1"
-                        Grid.Column="1">
-
-                <TextBlock 
-                    Text="Пятая пара"
-                    Foreground="White"
-                    FontSize="24"
-                    Margin="8"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center"/>
-
-                <TextBlock 
-                    Text="Время начала пары"
-                    Foreground="White"
-                    FontSize="18"
-                    Margin="8"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center"/>
-
-                <TextBox 
-                    Margin="8"
-                    Height="24"/>
-
-                <TextBlock 
-                    Text="Время окончания пары"
-                    Foreground="White"
-                    FontSize="18"
-                    Margin="8"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center"/>
-
-                <TextBox 
-                    Margin="8"
-                    Height="24"/>
-            </StackPanel>
-                
-            <StackPanel Grid.Row="1"
-                        Grid.Column="2">
-
-                <TextBlock 
-                    Text="Шестая пара"
-                    Foreground="White"
-                    FontSize="24"
-                    Margin="8"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center"/>
-
-                <TextBlock 
-                    Text="Время начала пары"
-                    Foreground="White"
-                    FontSize="18"
-                    Margin="8"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center"/>
-
-                <TextBox 
-                    Margin="8"
-                    Height="24"/>
-
-                <TextBlock 
-                    Text="Время окончания пары"
-                    Foreground="White"
-                    FontSize="18"
-                    Margin="8"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center"/>
-
-                <TextBox 
-                    Margin="8"
-                    Height="24"/>
-            </StackPanel>
-
-
-
-
+                    Command="{}"
+                    Style="{StaticResource MenuButtonTheme}"/>
 
         </Grid>
 
 
 
 
+        
     </Grid>
 </UserControl>

@@ -28,6 +28,8 @@ namespace Pipka
             {
                 DataManage.AllGroups = db.Groups.ToList();
                 DataManage.AllTeachers = db.Teachers.ToList();
+                DataManage.AllDisciplines = db.Disciplines.ToList();
+                DataManage.AllTeacherAndDisciplines = db.TeacherAndDisciplines.ToList();
             }
                 
         }

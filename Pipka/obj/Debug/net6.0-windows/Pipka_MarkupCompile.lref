@@ -3,6 +3,8 @@ FD:\19\common\KursovKuhar\Pipka\Pipka\Pipka\App.xaml;;
 FD:\19\common\KursovKuhar\Pipka\Pipka\Pipka\MainWindow.xaml;;
 FD:\19\common\KursovKuhar\Pipka\Pipka\Pipka\Views\ClassTimeActionView.xaml;;
 FD:\19\common\KursovKuhar\Pipka\Pipka\Pipka\Views\DisciplineActionView.xaml;;
+FD:\19\common\KursovKuhar\Pipka\Pipka\Pipka\Views\DisciplineActionViews\AddNewDisciplineView.xaml;;
+FD:\19\common\KursovKuhar\Pipka\Pipka\Pipka\Views\DisciplineActionViews\DeleteDisciplineView.xaml;;
 FD:\19\common\KursovKuhar\Pipka\Pipka\Pipka\Views\GroupActionView.xaml;;
 FD:\19\common\KursovKuhar\Pipka\Pipka\Pipka\Views\GroupActionViews\AddNewGroupView.xaml;;
 FD:\19\common\KursovKuhar\Pipka\Pipka\Pipka\Views\GroupActionViews\DeleteGroupView.xaml;;

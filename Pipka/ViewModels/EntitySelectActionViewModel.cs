@@ -1,4 +1,5 @@
 ﻿using Pipka.Core;
+using Pipka.Data;
 using Pipka.Views;
 using System;
 using System.Collections.Generic;
@@ -79,12 +80,17 @@ namespace Pipka.ViewModels
 
 
         public object _currentView { get; set; }
+
         public object CurrentView
         {
             get { return _currentView; }
             set
             {
                 _currentView = value;
+                if (value is IUIStateUpdate)
+                {
+                    ((IUIStateUpdate)value).StateUpdate();
+                }
                 OnPropertyChanged();
             }
         }

@@ -55,7 +55,9 @@ namespace Pipka.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    FullName = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    MiddleName = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -63,7 +65,7 @@ namespace Pipka.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "TeacherAndDiscipline",
+                name: "TeacherAndDisciplines",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -73,15 +75,15 @@ namespace Pipka.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_TeacherAndDiscipline", x => x.Id);
+                    table.PrimaryKey("PK_TeacherAndDisciplines", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_TeacherAndDiscipline_Disciplines_DisciplineId",
+                        name: "FK_TeacherAndDisciplines_Disciplines_DisciplineId",
                         column: x => x.DisciplineId,
                         principalTable: "Disciplines",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_TeacherAndDiscipline_Teachers_TeacherId",
+                        name: "FK_TeacherAndDisciplines_Teachers_TeacherId",
                         column: x => x.TeacherId,
                         principalTable: "Teachers",
                         principalColumn: "Id",
@@ -115,9 +117,9 @@ namespace Pipka.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Schedules_TeacherAndDiscipline_TeacherAndDisciplineId",
+                        name: "FK_Schedules_TeacherAndDisciplines_TeacherAndDisciplineId",
                         column: x => x.TeacherAndDisciplineId,
-                        principalTable: "TeacherAndDiscipline",
+                        principalTable: "TeacherAndDisciplines",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -138,13 +140,13 @@ namespace Pipka.Migrations
                 column: "TeacherAndDisciplineId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_TeacherAndDiscipline_DisciplineId",
-                table: "TeacherAndDiscipline",
+                name: "IX_TeacherAndDisciplines_DisciplineId",
+                table: "TeacherAndDisciplines",
                 column: "DisciplineId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_TeacherAndDiscipline_TeacherId",
-                table: "TeacherAndDiscipline",
+                name: "IX_TeacherAndDisciplines_TeacherId",
+                table: "TeacherAndDisciplines",
                 column: "TeacherId");
         }
 
@@ -160,7 +162,7 @@ namespace Pipka.Migrations
                 name: "Groups");
 
             migrationBuilder.DropTable(
-                name: "TeacherAndDiscipline");
+                name: "TeacherAndDisciplines");
 
             migrationBuilder.DropTable(
                 name: "Disciplines");

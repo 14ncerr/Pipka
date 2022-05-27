@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Pipka.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,11 +19,16 @@ namespace Pipka.Views.TeacherActionViews
     /// <summary>
     /// Логика взаимодействия для EditTeacherView.xaml
     /// </summary>
-    public partial class EditTeacherView : UserControl
+    public partial class EditTeacherView : UserControl, IUIStateUpdate
     {
         public EditTeacherView()
         {
             InitializeComponent();
+        }
+
+        public void StateUpdate()
+        {
+            FIOChangeAllTeachersCmb.Items.Refresh();
         }
     }
 }

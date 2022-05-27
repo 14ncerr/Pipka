@@ -12,8 +12,8 @@ using Pipka.Data;
 namespace Pipka.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20220526065216_TeaccherUpdated")]
-    partial class TeaccherUpdated
+    [Migration("20220527083338_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -153,7 +153,7 @@ namespace Pipka.Migrations
 
                     b.HasIndex("TeacherId");
 
-                    b.ToTable("TeacherAndDiscipline");
+                    b.ToTable("TeacherAndDisciplines");
                 });
 
             modelBuilder.Entity("Pipka.Models.Schedule", b =>

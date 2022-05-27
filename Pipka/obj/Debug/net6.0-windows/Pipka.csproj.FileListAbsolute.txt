@@ -133,8 +133,12 @@ D:\19\common\KursovKuhar\Pipka\Pipka\Pipka\obj\Debug\net6.0-windows\Views\Teache
 D:\19\common\KursovKuhar\Pipka\Pipka\Pipka\obj\Debug\net6.0-windows\Views\TeacherActionViews\EditTeacherView.baml
 D:\19\common\KursovKuhar\Pipka\Pipka\Pipka\obj\Debug\net6.0-windows\Views\TeacherActionViews\DeleteTeacherView.g.cs
 D:\19\common\KursovKuhar\Pipka\Pipka\Pipka\obj\Debug\net6.0-windows\Views\TeacherActionViews\DeleteTeacherView.baml
-D:\19\common\KursovKuhar\Pipka\Pipka\Pipka\obj\Debug\net6.0-windows\Pipka.csproj.AssemblyReference.cache
 D:\19\common\KursovKuhar\Pipka\Pipka\Pipka\obj\Debug\net6.0-windows\Views\GroupActionViews\AddNewGroupView.g.cs
 D:\19\common\KursovKuhar\Pipka\Pipka\Pipka\obj\Debug\net6.0-windows\Views\GroupActionViews\DeleteGroupView.g.cs
 D:\19\common\KursovKuhar\Pipka\Pipka\Pipka\obj\Debug\net6.0-windows\Views\GroupActionViews\AddNewGroupView.baml
 D:\19\common\KursovKuhar\Pipka\Pipka\Pipka\obj\Debug\net6.0-windows\Views\GroupActionViews\DeleteGroupView.baml
+D:\19\common\KursovKuhar\Pipka\Pipka\Pipka\obj\Debug\net6.0-windows\Views\DisciplineActionViews\AddNewDisciplineView.g.cs
+D:\19\common\KursovKuhar\Pipka\Pipka\Pipka\obj\Debug\net6.0-windows\Views\DisciplineActionViews\AddNewDisciplineView.baml
+D:\19\common\KursovKuhar\Pipka\Pipka\Pipka\obj\Debug\net6.0-windows\Views\DisciplineActionViews\DeleteDisciplineView.g.cs
+D:\19\common\KursovKuhar\Pipka\Pipka\Pipka\obj\Debug\net6.0-windows\Views\DisciplineActionViews\DeleteDisciplineView.baml
+D:\19\common\KursovKuhar\Pipka\Pipka\Pipka\obj\Debug\net6.0-windows\Pipka.csproj.AssemblyReference.cache

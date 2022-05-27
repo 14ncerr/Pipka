@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Pipka.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,11 +19,16 @@ namespace Pipka.Views.TeacherActionViews
     /// <summary>
     /// Логика взаимодействия для DeleteTeacherView.xaml
     /// </summary>
-    public partial class DeleteTeacherView : UserControl
+    public partial class DeleteTeacherView : UserControl, IUIStateUpdate
     {
         public DeleteTeacherView()
         {
             InitializeComponent();
+        }
+
+        public void StateUpdate()
+        {
+            DeleteAllTeachersCmb.Items.Refresh();
         }
     }
 }

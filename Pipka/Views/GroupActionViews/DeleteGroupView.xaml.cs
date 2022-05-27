@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Pipka.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,11 +19,16 @@ namespace Pipka.Views.GroupActionViews
     /// <summary>
     /// Логика взаимодействия для DeleteGroupView.xaml
     /// </summary>
-    public partial class DeleteGroupView : UserControl
+    public partial class DeleteGroupView : UserControl, IUIStateUpdate
     {
         public DeleteGroupView()
         {
             InitializeComponent();
+        }
+
+        public void StateUpdate()
+        {
+            allGroupsCmb.Items.Refresh();
         }
     }
 }

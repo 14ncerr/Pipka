@@ -151,7 +151,7 @@ namespace Pipka.Migrations
 
                     b.HasIndex("TeacherId");
 
-                    b.ToTable("TeacherAndDiscipline");
+                    b.ToTable("TeacherAndDisciplines");
                 });
 
             modelBuilder.Entity("Pipka.Models.Schedule", b =>

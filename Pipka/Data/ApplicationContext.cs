@@ -15,6 +15,7 @@ namespace Pipka.Data
         public DbSet<Group> Groups { get; set; }
         public DbSet<Schedule> Schedules { get; set; }
         public DbSet<Teacher> Teachers { get; set; }
+        public DbSet<TeacherAndDiscipline> TeacherAndDisciplines  { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

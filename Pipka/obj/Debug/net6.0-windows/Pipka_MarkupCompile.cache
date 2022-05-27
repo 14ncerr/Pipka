@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 D:\19\common\KursovKuhar\Pipka\Pipka\Pipka\App.xaml
-132086104481
+151908751281
 
-44-243139737
+45-2060617191
 2142098023572
-MainWindow.xaml;Resources\Styles.xaml;Views\ClassTimeActionView.xaml;Views\DisciplineActionView.xaml;Views\GroupActionView.xaml;Views\GroupActionViews\AddNewGroupView.xaml;Views\GroupActionViews\DeleteGroupView.xaml;Views\ScheduleActionView.xaml;Views\TeacherActionView.xaml;Views\TeacherActionViews\AddNewTeacherView.xaml;Views\TeacherActionViews\DeleteTeacherView.xaml;Views\TeacherActionViews\EditTeacherView.xaml;Views\Windows\EntitySelectActionWindow.xaml;
+MainWindow.xaml;Resources\Styles.xaml;Views\ClassTimeActionView.xaml;Views\DisciplineActionView.xaml;Views\DisciplineActionViews\AddNewDisciplineView.xaml;Views\DisciplineActionViews\DeleteDisciplineView.xaml;Views\GroupActionView.xaml;Views\GroupActionViews\AddNewGroupView.xaml;Views\GroupActionViews\DeleteGroupView.xaml;Views\ScheduleActionView.xaml;Views\TeacherActionView.xaml;Views\TeacherActionViews\AddNewTeacherView.xaml;Views\TeacherActionViews\DeleteTeacherView.xaml;Views\TeacherActionViews\EditTeacherView.xaml;Views\Windows\EntitySelectActionWindow.xaml;
 
 False
 

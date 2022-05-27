@@ -11,85 +11,45 @@
     <UserControl.DataContext>
         <vm:DisciplineActionViewModel/>
     </UserControl.DataContext>
+
     <Grid>
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
 
-        <StackPanel Grid.Column="0">
-            <TextBlock Text="Добавление"
-                       Foreground="White"
-                       FontSize="24"
-                       HorizontalAlignment="Center"
-                       Margin="8"/>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
 
-            <TextBlock 
-                Text="Название"
-                Foreground="White"
-                FontSize="18"
-                HorizontalAlignment="Center"
-                Margin="8 48 8 8"/>
+            <RadioButton
+                    Grid.Column="0"
+                    Name="AddNewBtn"
+                    Content="Добавить"
+                    FontSize="18"
+                    Command="{Binding AddNewViewCommand}"
+                    Style="{StaticResource MenuButtonTheme}"/>
 
-            <TextBox
-                Margin="8"
-                Height="24"/>
 
-            <Button
-                Margin="8"
-                Height="34"
-                Content="Добавить"/>
-        </StackPanel>
+            <RadioButton
+                    Grid.Column="1"
+                    Name="DeleteBtn"
+                    Content="Удалить"
+                    FontSize="18"
+                    Command="{Binding DeleteViewCommand}"
+                    Style="{StaticResource MenuButtonTheme}"/>
 
-        <StackPanel Grid.Column="1">
-            <TextBlock Text="Изменение"
-                       Foreground="White"
-                       FontSize="24"
-                       HorizontalAlignment="Center"
-                       Margin="8"/>
+        </Grid>
 
-            <TextBlock 
-                Text="Название"
-                Foreground="White"
-                FontSize="18"
-                HorizontalAlignment="Center"
-                Margin="8 48 8 8"/>
 
-            <TextBox
-                Margin="8"
-                Height="24"/>
+        <ContentControl Grid.Row="1"
+                        Content="{Binding CurrentView}"/>
 
-            <Button
-                Margin="8"
-                Height="34"
-                Content="Изменить"/>
-        </StackPanel>
 
-        <StackPanel Grid.Column="2">
-            <TextBlock Text="Удаление"
-                       Foreground="White"
-                       FontSize="24"
-                       HorizontalAlignment="Center"
-                       Margin="8"/>
 
-            <TextBlock 
-                Text="Название"
-                Foreground="White"
-                FontSize="18"
-                HorizontalAlignment="Center"
-                Margin="8 48 8 8"/>
-
-            <ComboBox
-                Margin="8"
-                Height="24"/>
-
-            <Button
-                Margin="8"
-                Height="34"
-                Content="Удалить"/>
-        </StackPanel>
 
     </Grid>
 </UserControl>
