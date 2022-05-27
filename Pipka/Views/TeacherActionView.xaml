@@ -15,162 +15,50 @@
 
     <Grid>
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
 
-        <StackPanel Grid.Column="0">
-            <TextBlock Text="Добавление"
-                       Foreground="White"
-                       FontSize="24"
-                       HorizontalAlignment="Center"
-                       Margin="8"/>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
 
-            <TextBlock 
-                Text="Фамилия"
-                Foreground="White"
-                FontSize="18"
-                HorizontalAlignment="Left"
-                Margin="8 48 8 8"/>
+            <RadioButton
+                    Grid.Column="0"
+                    Name="AddNewBtn"
+                    Content="Добавить"
+                    FontSize="18"
+                    Command="{Binding AddNewViewCommand}"
+                    Style="{StaticResource MenuButtonTheme}"/>
 
-            <TextBox
-                Margin="8"
-                Height="24"
-                Text="{Binding NLastName}"/>
+            <RadioButton
+                    Grid.Column="1"
+                    Name="EditBtn"
+                    Content="Изменить"
+                    FontSize="18"
+                    Command="{Binding EditTeacherViewCommand}"
+                    Style="{StaticResource MenuButtonTheme}"/>
 
-            <TextBlock 
-                Text="Имя"
-                Foreground="White"
-                FontSize="18"
-                HorizontalAlignment="Left"
-                Margin="8"/>
+            <RadioButton
+                    Grid.Column="2"
+                    Name="DeleteBtn"
+                    Content="Удалить"
+                    FontSize="18"
+                    Command="{Binding DeleteTeacherViewCommand}"
+                    Style="{StaticResource MenuButtonTheme}"/>
 
-            <TextBox
-                Margin="8"
-                Height="24"
-                Text="{Binding NFirstName}"/>
+        </Grid>
 
-            <TextBlock 
-                Text="Отчество"
-                Foreground="White"
-                FontSize="18"
-                HorizontalAlignment="Left"
-                Margin="8"/>
 
-            <TextBox
-                Margin="8"
-                Height="24"
-                Text="{Binding NMiddleName}"/>
+        <ContentControl Grid.Row="1"
+                        Content="{Binding CurrentView}"/>
 
-            <Button
-                Margin="8"
-                Height="34"
-                Content="Добавить"
-                Command="{Binding AddNewTeacherCommand}"
-                CommandParameter="{Binding ElementName=DeleteAllTeachersCmb}"/>
-            
-            
-        </StackPanel>
 
-        <StackPanel Grid.Column="1">
-            <TextBlock Text="Изменение"
-                       Foreground="White"
-                       FontSize="24"
-                       HorizontalAlignment="Center"
-                       Margin="8"/>
 
-            <TextBlock 
-                Text="ФИО"
-                Foreground="White"
-                FontSize="18"
-                HorizontalAlignment="Center"
-                Margin="8 48 8 8"/>
-
-            <ComboBox
-                Name="FIOChangeAllTeachersCmb"
-                Margin="8"
-                Height="24"
-                ItemsSource="{Binding AllTeachers}"
-                DisplayMemberPath="FullName"
-                SelectedItem="{Binding SelectedTeacher}"
-                SelectionChanged="FIOChangeAllTeachersCmb_SelectionChanged"
-                />
-
-            <TextBlock 
-                Text="Фамилия"
-                Foreground="White"
-                FontSize="18"
-                HorizontalAlignment="Left"
-                Margin="8"/>
-
-            <TextBox
-                Margin="8"
-                Height="24"
-                Text="{Binding NLastName}"/>
-
-            <TextBlock 
-                Text="Имя"
-                Foreground="White"
-                FontSize="18"
-                HorizontalAlignment="Left"
-                Margin="8"/>
-
-            <TextBox
-                Margin="8"
-                Height="24"
-                Text="{Binding NFirstName}"/>
-
-            <TextBlock 
-                Text="Отчество"
-                Foreground="White"
-                FontSize="18"
-                HorizontalAlignment="Left"
-                Margin="8"/>
-
-            <TextBox
-                Margin="8"
-                Height="24"
-                Text="{Binding NMiddleName}"/>
-
-            <Button
-                Margin="8"
-                Height="34"
-                Content="Изменить"
-                Command="{Binding EditTeacherCommand}"
-                CommandParameter="{Binding ElementName=DeleteAllTeachersCmb}"/>
-        </StackPanel>
-
-        <StackPanel Grid.Column="2">
-            <TextBlock Text="Удаление"
-                       Foreground="White"
-                       FontSize="24"
-                       HorizontalAlignment="Center"
-                       Margin="8"/>
-
-            <TextBlock 
-                Text="ФИО"
-                Foreground="White"
-                FontSize="18"
-                HorizontalAlignment="Center"
-                Margin="8 48 8 8"/>
-
-            <ComboBox
-                Name="DeleteAllTeachersCmb"
-                Margin="8"
-                Height="24"
-                ItemsSource="{Binding AllTeachers}"
-                DisplayMemberPath="FullName"
-                SelectedItem="{Binding SelectedTeacher}"/>
-
-            <Button
-                Margin="8"
-                Height="34"
-                Content="Удалить"
-                Command="{Binding DeleteTeacherCommand}"
-                CommandParameter="{Binding ElementName=DeleteAllTeachersCmb}"/>
-        </StackPanel>
 
     </Grid>
 </UserControl>

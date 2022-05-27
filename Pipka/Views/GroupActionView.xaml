@@ -12,70 +12,45 @@
     <UserControl.DataContext>
         <vm:GroupActionViewModel/>
     </UserControl.DataContext>
-    
+
     <Grid>
-        
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
 
-        <StackPanel Grid.Column="0">
-            <TextBlock Text="Добавление"
-                       Foreground="White"
-                       FontSize="24"
-                       HorizontalAlignment="Center"
-                       Margin="8"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
 
-            <TextBlock 
-                Text="Название"
-                Foreground="White"
-                FontSize="18"
-                HorizontalAlignment="Center"
-                Margin="8 48 8 8"/>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
 
-            <TextBox
-                Margin="8"
-                Height="24"
-                Text="{Binding GName}"/>
+            <RadioButton
+                    Grid.Column="0"
+                    Name="AddNewBtn"
+                    Content="Добавить"
+                    FontSize="18"
+                    Command="{Binding AddNewViewCommand}"
+                    Style="{StaticResource MenuButtonTheme}"/>
 
-            <Button
-                Margin="8"
-                Height="34"
-                Content="Добавить"
-                Command="{Binding AddNewGroupCommand}"
-                CommandParameter="{Binding ElementName=allGroupsCmb}"/>
-        </StackPanel>
 
-        <StackPanel Grid.Column="2">
-            <TextBlock Text="Удаление"
-                       Foreground="White"
-                       FontSize="24"
-                       HorizontalAlignment="Center"
-                       Margin="8"/>
+            <RadioButton
+                    Grid.Column="1"
+                    Name="DeleteBtn"
+                    Content="Удалить"
+                    FontSize="18"
+                    Command="{Binding DeleteViewCommand}"
+                    Style="{StaticResource MenuButtonTheme}"/>
 
-            <TextBlock 
-                Text="Название"
-                Foreground="White"
-                FontSize="18"
-                HorizontalAlignment="Center"
-                Margin="8 48 8 8"/>
+        </Grid>
 
-            <ComboBox
-                Name="allGroupsCmb"
-                Margin="8"
-                Height="24"
-                ItemsSource="{Binding AllGroups}"
-                DisplayMemberPath="Name"
-                SelectedItem="{Binding SelectedGroup}"/>
 
-            <Button
-                Margin="8"
-                Height="34"
-                Content="Удалить"
-                Command="{Binding DeleteGroupCommand}"
-                CommandParameter="{Binding ElementName=allGroupsCmb}"/>
-        </StackPanel>
+        <ContentControl Grid.Row="1"
+                        Content="{Binding CurrentView}"/>
+
+
+
 
     </Grid>
 </UserControl>

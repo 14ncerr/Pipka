@@ -16,10 +16,25 @@
     <Compile Update="Views\GroupActionView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\GroupActionViews\AddNewGroupView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\GroupActionViews\DeleteGroupView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\ScheduleActionView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\TeacherActionView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\TeacherActionViews\AddNewTeacherView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\TeacherActionViews\DeleteTeacherView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\TeacherActionViews\EditTeacherView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\Windows\EntitySelectActionWindow.xaml.cs">
@@ -42,10 +57,25 @@
     <Page Update="Views\GroupActionView.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Views\GroupActionViews\AddNewGroupView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\GroupActionViews\DeleteGroupView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\ScheduleActionView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\TeacherActionView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\TeacherActionViews\AddNewTeacherView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\TeacherActionViews\DeleteTeacherView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\TeacherActionViews\EditTeacherView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Windows\EntitySelectActionWindow.xaml">

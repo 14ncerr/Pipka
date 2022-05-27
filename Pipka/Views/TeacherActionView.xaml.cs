@@ -25,9 +25,6 @@ namespace Pipka.Views
             InitializeComponent();
         }
 
-        private void FIOChangeAllTeachersCmb_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            FIOChangeAllTeachersCmb.Items.Refresh();
-        }
+      
     }
 }

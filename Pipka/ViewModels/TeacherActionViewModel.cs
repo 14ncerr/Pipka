@@ -2,6 +2,7 @@
 using Pipka.Core;
 using Pipka.Data;
 using Pipka.Models;
+using Pipka.Views.TeacherActionViews;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,146 +15,62 @@ namespace Pipka.ViewModels
 {
     public class TeacherActionViewModel : ViewModel
     {
-        public string NLastName { get; set; }
-        public string NFirstName { get; set; }
-        public string NMiddleName { get; set; }
-        public string TFullName { get; set; }
-        public Teacher SelectedTeacher { get; set; }
+        public object _currentView { get; set; }
 
-        private List<Teacher> _allTeachers = new List<Teacher>();
-
-        public List<Teacher> AllTeachers
+        public object CurrentView
         {
-            get { return _allTeachers; }
+            get { return _currentView; }
             set
             {
-                _allTeachers = value;
+                _currentView = value;
+                OnPropertyChanged();
             }
         }
 
-        public TeacherActionViewModel()
-        {
-            _allTeachers = DataManage.AllTeachers;
-        }
+        public AddNewTeacherView _addNewTeacherView = new AddNewTeacherView();
 
-        private RelayCommand _addNewTeacherCommand;
-
-        public RelayCommand AddNewTeacherCommand
+        private RelayCommand _addNewViewCommand;
+        public RelayCommand AddNewViewCommand
         {
             get
             {
-                return _addNewTeacherCommand ?? new RelayCommand(obj =>
+                return _addNewViewCommand ?? new RelayCommand(obj =>
                 {
-                    using (ApplicationContext db = new ApplicationContext())
-                    {
-                        try
-                        {
-
-                            Teacher teacher = new()
-                            {
-                                LastName = NLastName,
-                                FirstName = NFirstName,
-                                MiddleName = NMiddleName
-                            };
-
-                            db.Teachers.Add(teacher);
-                            DataManage.AllTeachers.Add(teacher);
-                            db.SaveChanges();
-                            (obj as ComboBox).Items.Refresh();
-                            MessageBox.Show($"Успешно! Преподаватель {teacher.FullName} добавлен.");
-                            SetNullValuesToProperties();
-                        }
-                        catch (DbUpdateException)
-                        {
-                            MessageBox.Show("Введённые данные не корректны.");
-                            SetNullValuesToProperties();
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show(ex.ToString() + " Ошибка, что-то пошло не так.");
-                            SetNullValuesToProperties();
-                        }
-                    }
+                    CurrentView = _addNewTeacherView;
                 });
             }
         }
 
-        private RelayCommand _deleteTeacherCommand;
+        public EditTeacherView _editTeacherView = new EditTeacherView();
 
-        public RelayCommand DeleteTeacherCommand
+        private RelayCommand _editTeacherViewCommand;
+        public RelayCommand EditTeacherViewCommand
         {
             get
             {
-                return _deleteTeacherCommand ?? new RelayCommand(obj =>
+                return _editTeacherViewCommand ?? new RelayCommand(obj =>
                 {
-                    using (ApplicationContext db = new ApplicationContext())
-                    {
-                        try
-                        {
-                            TFullName = SelectedTeacher.FullName;
-                            db.Teachers.Remove(SelectedTeacher);
-                            DataManage.AllTeachers.Remove(SelectedTeacher);
-                            (obj as ComboBox).Items.Refresh();
-                            db.SaveChanges();
-
-                            MessageBox.Show($"Успешно! Преподаватель {TFullName} удалён.");
-                            SetNullValuesToProperties();
-
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show(ex.ToString() + " Ошибка, что-то пошло не так.");
-                            SetNullValuesToProperties();
-                        }
-                    }
-                });
-            }
-
-        }
-
-        private RelayCommand _editTeacherCommand;
-
-        public RelayCommand EditTeacherCommand
-        {
-            get
-            {
-                return _editTeacherCommand ?? new RelayCommand(obj =>
-                {
-                    using (ApplicationContext db = new ApplicationContext())
-                    {
-                        try
-                        {
-                            SelectedTeacher = db.Teachers.FirstOrDefault(teacher => teacher.Id == SelectedTeacher.Id);
-                            SelectedTeacher.LastName = NLastName;
-                            SelectedTeacher.FirstName = NFirstName;
-                            SelectedTeacher.MiddleName = NMiddleName;
-                            db.SaveChanges();
-                            
-                            
-
-
-                            MessageBox.Show($"Успешно! Данные о работнике {SelectedTeacher.LastName} {SelectedTeacher.FirstName} {SelectedTeacher.MiddleName}обновлены.");
-                            SetNullValuesToProperties();
-
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show(ex.ToString() + " Ошибка, что-то пошло не так.");
-                            SetNullValuesToProperties();
-                        }
-                    }
+                    CurrentView = _editTeacherView;
                 });
             }
         }
 
 
-        public void SetNullValuesToProperties()
+        public DeleteTeacherView _deleteTeacherView = new DeleteTeacherView();
+
+        private RelayCommand _deleteTeacherViewCommand;
+        public RelayCommand DeleteTeacherViewCommand
         {
-            SelectedTeacher = null;
-            NFirstName = null;
-            NLastName = null;
-            NMiddleName = null;
+            get
+            {
+                return _deleteTeacherViewCommand ?? new RelayCommand(obj =>
+                {
+                    CurrentView = _deleteTeacherView;
+                });
+            }
         }
+
+    
 
     }
 }
