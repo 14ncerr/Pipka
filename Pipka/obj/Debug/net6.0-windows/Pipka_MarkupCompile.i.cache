@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\19\common\KursovKuhar\Pipka\Pipka\Pipka\obj\Debug\net6.0-windows\
+D:\CL\ST4\git771\Pipka\Pipka\Pipka\obj\Debug\net6.0-windows\
 Pipka
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-D:\19\common\KursovKuhar\Pipka\Pipka\Pipka\App.xaml
-16-309116440
+D:\CL\ST4\git771\Pipka\Pipka\Pipka\App.xaml
+17-1293311932
 
-4914109541
-2142098023572
-MainWindow.xaml;Resources\Styles.xaml;Views\ClassTimeActionView.xaml;Views\DisciplineActionView.xaml;Views\DisciplineActionViews\AddNewDisciplineView.xaml;Views\DisciplineActionViews\DeleteDisciplineView.xaml;Views\GroupActionView.xaml;Views\GroupActionViews\AddNewGroupView.xaml;Views\GroupActionViews\DeleteGroupView.xaml;Views\ScheduleActionView.xaml;Views\ScheduleActionViews\AddNewScheduleView.xaml;Views\TeacherActionView.xaml;Views\TeacherActionViews\AddNewTeacherView.xaml;Views\TeacherActionViews\DeleteTeacherView.xaml;Views\TeacherActionViews\EditTeacherView.xaml;Views\Windows\EntitySelectActionWindow.xaml;
+511921795761
+214-396799004
+MainWindow.xaml;Resources\Styles.xaml;Views\ClassTimeActionView.xaml;Views\DisciplineActionView.xaml;Views\DisciplineActionViews\AddNewDisciplineView.xaml;Views\DisciplineActionViews\DeleteDisciplineView.xaml;Views\GroupActionView.xaml;Views\GroupActionViews\AddNewGroupView.xaml;Views\GroupActionViews\DeleteGroupView.xaml;Views\ScheduleActionView.xaml;Views\ScheduleActionViews\AddNewScheduleView.xaml;Views\ScheduleActionViews\DeleteScheduleView.xaml;Views\TeacherActionView.xaml;Views\TeacherActionViews\AddNewTeacherView.xaml;Views\TeacherActionViews\DeleteTeacherView.xaml;Views\TeacherActionViews\EditTeacherView.xaml;Views\Windows\EntitySelectActionWindow.xaml;
 
 True
 

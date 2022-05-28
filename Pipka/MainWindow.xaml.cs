@@ -1,4 +1,5 @@
-﻿using Pipka.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using Pipka.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,10 +30,27 @@ namespace Pipka
                 DataManage.AllGroups = db.Groups.ToList();
                 DataManage.AllTeachers = db.Teachers.ToList();
                 DataManage.AllDisciplines = db.Disciplines.ToList();
-                DataManage.AllTeacherAndDisciplines = db.TeacherAndDisciplines.ToList();
+
+                DataManage.AllTeacherAndDisciplines = db.TeacherAndDisciplines.Include(tAD => tAD.Teacher)
+                    .Include(tAD => tAD.Discipline).ToList();
+
                 DataManage.AllClassTimes = db.ClassTimes.ToList();
+                DataManage.AllSchedules = db.Schedules.Include(s => s.Group)
+                    .Include(s => s.ClassTime)
+                    .Include(s => s.TeacherAndDiscipline)
+                    .ToList();
             }
                 
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void Border_MouseLeftButtonDown(object sender, RoutedEventArgs e)
+        {
+            DragMove();
         }
     }
 }

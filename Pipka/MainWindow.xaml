@@ -6,20 +6,25 @@
         xmlns:local="clr-namespace:Pipka"
         xmlns:vm="clr-namespace:Pipka.ViewModels"
         mc:Ignorable="d"
-        Title="MainWindow" 
+        Title="Расписание" 
         Height="450" 
         Width="800"
+        AllowsTransparency="True"
+        WindowStyle="None"
+        ResizeMode="NoResize"
         Background="Transparent">
 
     <Window.DataContext>
         <vm:StarterViewModel/>
     </Window.DataContext>
     
-    <Border Background="Gray"
-            CornerRadius="20">
+    <Border Background="#25252b"
+            CornerRadius="0 0 20 20"
+            MouseLeftButtonDown="Border_MouseLeftButtonDown">
 
         <Grid>
             <Grid.RowDefinitions>
+                <RowDefinition Height="0.1*"/>
                 <RowDefinition Height="0.15*"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
@@ -28,29 +33,142 @@
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="160"/>
-                    <ColumnDefinition Width="160"/>
                     <ColumnDefinition/>
+                    <ColumnDefinition Width="50"/>
                 </Grid.ColumnDefinitions>
 
-             
                 <Button 
-                    Margin="8"
-                    Content="Выбрать группу"
-                    BorderThickness="0"/>
+                Grid.Column="2"
+                Style="{StaticResource ExitButton}" 
+                Click="Button_Click"/>
 
                 <Button 
-                    Grid.Column="1"
-                    Margin="8"
-                    Content="Add New"
+                    Grid.Column="0"
+                    Content="Режим конструктора"
+                    Margin="4"
+                    Width="160"
                     BorderThickness="0"
                     Command="{Binding EntitySelectActionWindowCommand}"/>
+
             </Grid>
             
 
-            <ContentControl Grid.Row="1"
-                            Content="{Binding CurrentView}">
+                <StackPanel 
+                    Grid.Row="1"
+                    Orientation="Horizontal">
+                    <TextBlock 
+                        Text="Дата:"
+                        Foreground="White"
+                        FontSize="14"
+                        HorizontalAlignment="Left"
+                        Margin="8"/>
+                    
+                    <DatePicker
+                        Width="140"
+                        Height="50"
+                        Margin="8"
+                        SelectedDate="{Binding SelectedDate}"/>
+
+                    <TextBlock 
+                        Text="Группа:"
+                        Foreground="White"
+                        FontSize="14"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        Margin="8"/>
+
+                <ComboBox 
+                        Width="200"
+                        Margin="8"
+                        VerticalAlignment="Center"
+                        Height="24"
+                        ItemsSource="{Binding AllGroups}"
+                        DisplayMemberPath="Name"
+                        SelectedItem="{Binding SelectedGroup}"/>
+
+                <Button
+                    Margin="8"
+                    Content="Сортировка"
+                    Width="80"
+                    BorderThickness="0"
+                    Command="{Binding ApplyFilters}"
+                    CommandParameter="{Binding ElementName=ScheduleListView}"/>
+
+                <Button
+                    Margin="8"
+                    Content="Сброс"
+                    Width="80"
+                    BorderThickness="0"
+                    Command="{Binding DeleteFilters}"                        
+                    CommandParameter="{Binding ElementName=ScheduleListView}"/>
+            </StackPanel>
+
+              
+
                 
-            </ContentControl>
+  
+
+                <ListView 
+                  x:Name="ScheduleListView"
+                  Grid.Row="2"
+                  Foreground="Black"
+                  Background="White"
+                  ItemsSource="{Binding AllSchedules}"
+                  SelectedItem="{Binding SelectedItem}"
+                  >
+
+                    <ListView.View>
+                        <GridView>
+
+                        <GridViewColumn                        
+                                DisplayMemberBinding="{Binding Date, StringFormat=dd/MM/yyyy}"
+                                Width="80">
+                            <Border>
+                                <TextBlock 
+                                        Text="Дата" 
+                                        FontWeight="Bold" 
+                                        FontSize="16"/>
+                            </Border>
+                        </GridViewColumn>
+
+                        <GridViewColumn                        
+                                DisplayMemberBinding="{Binding ClassTime.FullView}"
+                                Width="160">
+                                <Border>
+                                    <TextBlock 
+                                        Text="Время" 
+                                        FontWeight="Bold" 
+                                        FontSize="16"/>
+                                </Border>
+                            </GridViewColumn>
+
+                            <GridViewColumn 
+                                DisplayMemberBinding="{Binding Group.Name}"
+                                Width="80">
+                                <Border>
+                                    <TextBlock 
+                                    Text="Группа" 
+                                    FontWeight="Bold" 
+                                    FontSize="16"/>
+                                </Border>
+                            </GridViewColumn>
+
+                            <GridViewColumn 
+                                DisplayMemberBinding="{Binding TeacherAndDiscipline.TeacherFIOAndDiscipline}"
+                                Width="180"
+                                >
+                                <Border>
+                                    <TextBlock 
+                                        Text="Дисциплина" 
+                                        FontWeight="Bold" 
+                                        FontSize="16"/>
+                                </Border>
+                            </GridViewColumn>
+
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            
             
         </Grid>
         

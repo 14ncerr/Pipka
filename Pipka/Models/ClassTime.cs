@@ -11,12 +11,14 @@ namespace Pipka.Models
     {
         public int Id { get; set; }
 
+        public int ClassPos { get; set; }
+
         public DateTime StartTime { get; set; }
 
         public DateTime EndTime { get; set; }
 
         [NotMapped]
-        public string FullView => $"{Id} {StartTime.TimeOfDay} - {EndTime.TimeOfDay}";
+        public string FullView => $"{ClassPos}) {StartTime.TimeOfDay} - {EndTime.TimeOfDay}";
 
         public List<Schedule> Schedules { get; set; }
     }

@@ -12,7 +12,7 @@ using Pipka.Data;
 namespace Pipka.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20220527083338_Initial")]
+    [Migration("20220528114152_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -31,6 +31,9 @@ namespace Pipka.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("ClassPos")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("EndTime")
                         .HasColumnType("datetime2");

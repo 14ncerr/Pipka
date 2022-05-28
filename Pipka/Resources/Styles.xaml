@@ -38,4 +38,36 @@
 
     </Style>
 
+    <ImageBrush x:Key="ExitButtonRedImage"
+                ImageSource="\Images\closeRed.png"
+                Stretch="Uniform"/>
+    <ImageBrush x:Key="ExitButtonBlueImage"
+                ImageSource="\Images\closeBlue.png"
+                Stretch="Uniform"/>
+
+    <Style x:Key="ExitButton" 
+           TargetType="{x:Type Button}">
+        <Setter Property="Background" Value="{StaticResource ExitButtonBlueImage}"/>
+        <Setter Property="Width" Value="20"/>
+        <Setter Property="Height" Value="20"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Margin" Value="4 0 4 0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="ExitButton"
+                            Background="{TemplateBinding Background}" />
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" TargetName="ExitButton" Value="{StaticResource ExitButtonRedImage}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" TargetName="ExitButton" Value="{StaticResource ExitButtonBlueImage}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
 </ResourceDictionary>

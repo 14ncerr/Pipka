@@ -23,5 +23,17 @@ namespace Pipka.Views.Windows
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void Border_MouseLeftButtonDown(object sender, RoutedEventArgs e)
+        {
+            DragMove();
+        }
+
+        
     }
 }

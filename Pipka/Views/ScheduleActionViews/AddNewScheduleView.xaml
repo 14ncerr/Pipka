@@ -87,7 +87,8 @@
             <Button
                 Margin="8"
                 Height="34"
-                Content="Добавить"/>
+                Content="Добавить"
+                Command="{Binding AddNewScheduleCommand}"/>
             
         </StackPanel>
         </Grid>

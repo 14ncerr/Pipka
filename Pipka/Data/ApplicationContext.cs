@@ -47,8 +47,8 @@ namespace Pipka.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            string connectionString = @"Server=PC-232-13\SQLEXPRESS;Database=PKursovaDB;User Id=U-19; Password=19$RPEe;";
-            //string connectionString = @"Server=DESKTOP-IL38R2G\SQLEXPRESS;Database=PKursovaDB;Trusted_Connection=True;";
+            //string connectionString = @"Server=PC-232-13\SQLEXPRESS;Database=PKursovaDB;User Id=U-19; Password=19$RPEe;";
+            string connectionString = @"Server=DESKTOP-IL38R2G\SQLEXPRESS;Database=PKursovaDB;Trusted_Connection=True;";
             optionsBuilder.UseSqlServer(connectionString);
         }
     }

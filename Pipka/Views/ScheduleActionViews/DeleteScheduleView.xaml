@@ -1,0 +1,46 @@
+﻿<UserControl x:Class="Pipka.Views.ScheduleActionViews.DeleteScheduleView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Pipka.Views.ScheduleActionViews"
+              xmlns:vm="clr-namespace:Pipka.ViewModels.ScheduleActionViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" 
+             d:DesignWidth="800">
+    
+    <UserControl.DataContext>
+        <vm:DeleteScheduleViewModel/>
+    </UserControl.DataContext>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="1.8*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Column="1"
+                        Grid.Row="1">
+            <TextBlock 
+                Text="Выбор записи"
+                Foreground="White"
+                FontSize="18"
+                HorizontalAlignment="Left"
+                Margin="8"/>
+
+            <Button
+                Margin="8"
+                Height="34"
+                Content="Удалить"
+                Command="{}"/>
+
+        </StackPanel>
+    </Grid>
+</UserControl>

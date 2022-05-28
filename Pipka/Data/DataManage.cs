@@ -9,6 +9,18 @@ namespace Pipka.Data
 {
     public static class DataManage     
     {
+        #region Lists
+
+        private static List<Schedule> _allSchedules = new List<Schedule>();
+        public static List<Schedule> AllSchedules
+        {
+            get { return _allSchedules; }
+            set
+            {
+                _allSchedules = value;
+            }
+        }
+
         private static List<TeacherAndDiscipline> _allTeacherAndDisciplines = new List<TeacherAndDiscipline>();
         public static List<TeacherAndDiscipline> AllTeacherAndDisciplines
         {
@@ -58,5 +70,7 @@ namespace Pipka.Data
                 _allTeachers = value;
             }
         }
+
+        #endregion
     }
 }
