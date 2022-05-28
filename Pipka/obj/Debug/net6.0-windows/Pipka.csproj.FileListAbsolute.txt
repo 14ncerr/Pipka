@@ -141,4 +141,5 @@ D:\19\common\KursovKuhar\Pipka\Pipka\Pipka\obj\Debug\net6.0-windows\Views\Discip
 D:\19\common\KursovKuhar\Pipka\Pipka\Pipka\obj\Debug\net6.0-windows\Views\DisciplineActionViews\AddNewDisciplineView.baml
 D:\19\common\KursovKuhar\Pipka\Pipka\Pipka\obj\Debug\net6.0-windows\Views\DisciplineActionViews\DeleteDisciplineView.g.cs
 D:\19\common\KursovKuhar\Pipka\Pipka\Pipka\obj\Debug\net6.0-windows\Views\DisciplineActionViews\DeleteDisciplineView.baml
-D:\19\common\KursovKuhar\Pipka\Pipka\Pipka\obj\Debug\net6.0-windows\Pipka.csproj.AssemblyReference.cache
+D:\19\common\KursovKuhar\Pipka\Pipka\Pipka\obj\Debug\net6.0-windows\Views\ScheduleActionViews\AddNewScheduleView.g.cs
+D:\19\common\KursovKuhar\Pipka\Pipka\Pipka\obj\Debug\net6.0-windows\Views\ScheduleActionViews\AddNewScheduleView.baml

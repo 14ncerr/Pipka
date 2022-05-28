@@ -31,6 +31,9 @@
     <Compile Update="Views\ScheduleActionView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\ScheduleActionViews\AddNewScheduleView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\TeacherActionView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -76,6 +79,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\ScheduleActionView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ScheduleActionViews\AddNewScheduleView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\TeacherActionView.xaml">

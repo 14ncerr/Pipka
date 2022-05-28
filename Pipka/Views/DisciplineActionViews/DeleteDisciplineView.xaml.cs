@@ -29,6 +29,7 @@ namespace Pipka.Views.DisciplineActionViews
         public void StateUpdate()
         {
             allDisciplinesCmb.Items.Refresh();
+            
         }
     }
 }

@@ -39,6 +39,16 @@ namespace Pipka.Data
             }
         }
 
+        private static List<ClassTime> _allClassTimes = new List<ClassTime>();
+        public static List<ClassTime> AllClassTimes
+        {
+            get { return _allClassTimes; }
+            set
+            {
+                _allClassTimes = value;
+            }
+        }
+
         private static List<Teacher> _allTeachers = new List<Teacher>();
         public static List<Teacher> AllTeachers
         {

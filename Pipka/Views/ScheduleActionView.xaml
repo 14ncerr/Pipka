@@ -4,108 +4,53 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Pipka.Views"
+             xmlns:vm="clr-namespace:Pipka.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="600" 
              d:DesignWidth="800">
+    
+    <UserControl.DataContext>
+        <vm:ScheduleActionViewModel/>
+    </UserControl.DataContext>
+    
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
 
-        <StackPanel Grid.Column="0">
-            <TextBlock Text="Добавление"
-                       Foreground="White"
-                       FontSize="24"
-                       HorizontalAlignment="Center"
-                       Margin="8"/>
-
-            <TextBlock 
-                Text="Дата"
-                Foreground="White"
-                FontSize="18"
-                HorizontalAlignment="Left"
-                Margin="8 48 8 8"/>
-
-            <DatePicker
-                Margin="8"
-                Height="24"/>
-
-            <TextBlock 
-                Text="Преподаватель"
-                Foreground="White"
-                FontSize="18"
-                HorizontalAlignment="Left"
-                Margin="8"/>
-
-            <ComboBox
-                Margin="8"
-                Height="24"/>
-
-            <TextBlock 
-                Text="Дисциплина"
-                Foreground="White"
-                FontSize="18"
-                HorizontalAlignment="Left"
-                Margin="8"/>
-
-            <ComboBox
-                Margin="8"
-                Height="24"/>
-
-            <TextBlock 
-                Text="Группа"
-                Foreground="White"
-                FontSize="18"
-                HorizontalAlignment="Left"
-                Margin="8"/>
-
-            <ComboBox
-                Margin="8"
-                Height="24"/>
+            <RadioButton
+                    Grid.Column="0"
+                    Name="AddNewBtn"
+                    Content="Добавить"
+                    FontSize="18"
+                    Command="{Binding AddNewViewCommand}"
+                    Style="{StaticResource MenuButtonTheme}"/>
 
 
-            <TextBlock 
-                Text="Пара №"
-                Foreground="White"
-                FontSize="18"
-                HorizontalAlignment="Left"
-                Margin="8"/>
+            <RadioButton
+                    Grid.Column="1"
+                    Name="DeleteBtn"
+                    Content="Удалить"
+                    FontSize="18"
+                    Command="{Binding DeleteViewCommand}"
+                    Style="{StaticResource MenuButtonTheme}"/>
 
-            <ComboBox
-                Margin="8"
-                Height="24"/>
+        </Grid>
 
 
-            <Button
-                Margin="8"
-                Height="34"
-                Content="Добавить"/>
-        </StackPanel>
-        <StackPanel Grid.Column="2">
-            <TextBlock Text="Удаление"
-                       Foreground="White"
-                       FontSize="24"
-                       HorizontalAlignment="Center"
-                       Margin="8"/>
+        <ContentControl Grid.Row="1"
+                        Content="{Binding CurrentView}"/>
 
-            <TextBlock 
-                Text="Название"
-                Foreground="White"
-                FontSize="18"
-                HorizontalAlignment="Center"
-                Margin="8 48 8 8"/>
 
-            <ComboBox
-                Margin="8"
-                Height="24"/>
 
-            <Button
-                Margin="8"
-                Height="34"
-                Content="Удалить"/>
-        </StackPanel>
 
     </Grid>
 </UserControl>
+

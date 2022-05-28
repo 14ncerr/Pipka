@@ -30,6 +30,7 @@ namespace Pipka
                 DataManage.AllTeachers = db.Teachers.ToList();
                 DataManage.AllDisciplines = db.Disciplines.ToList();
                 DataManage.AllTeacherAndDisciplines = db.TeacherAndDisciplines.ToList();
+                DataManage.AllClassTimes = db.ClassTimes.ToList();
             }
                 
         }
